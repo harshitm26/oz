@@ -1,0 +1,35 @@
+1. "skip" should be changed to "nop"
+
+2. Typo in Question 4: variable names should be in small letters,
+
+ e.g. ident(x), instead of ident(y)
+
+3. Major change in Question 4: The format of a record
+
+is, for example,
+ 
+ [record literal(a)                       for          a(f1:v1
+         [[literal(f1) ident(v1)]                        f2:v2
+          [literal(f2) ident(v2)]                        ...
+          ...                                            fn:vn)
+          [literal(fn) ident(vn)]]]
+
+or
+
+ [record literal(b)                       for          b(f1:10
+         [[literal(f1) literal(10)]                      f2:y)
+          [literal(f2) ident(y)]]]
+
+etc.
+
+4. In Questions 6 and 7, the syntax should be changed to
+ [conditional ident(x) s1 s2]    instead of [if ident(x)#s1 s2]
+
+and
+ 
+ [match ident(x) p1 s1 s2]       instead of [case ident(x) p1#s1 s2]
+
+
+        
+
+

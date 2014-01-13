@@ -1,0 +1,77 @@
+declare
+Program =
+[
+ [localvar ident(flag)
+  [
+   [localvar ident(matched)
+    [
+     [localvar ident(assign)
+      [
+       [bind ident(assign) [routine
+			    [ident(x) ident(y)]
+			    [[bind ident(x) literal(10314)]
+			     [bind ident(y) literal(41301)]
+			     [bind ident(flag) false]
+			    ]
+			   ]
+       ]
+       [localvar ident(a)
+	[
+	 [localvar ident(b)
+	  [
+	   [localvar ident(x0)
+	    [
+	     [localvar ident(y0)
+	      [
+	       [apply ident(assign) ident(x0) ident(y0)]
+	       [bind ident(a)
+		[record literal(point)
+		 [
+		  [literal(x) ident(x0)]
+		  [literal(y) ident(y0)]
+		 ]
+		]
+	       ]
+	       [bind ident(b)
+		[record literal(point)
+		 [
+		  [literal(x) ident(y0)]
+		  [literal(y) ident(x0)]
+		 ]
+		]
+	       ]
+	       [match ident(a)
+		[record literal(point)
+		 [
+		  [literal(x) ident(xa)]
+		  [literal(y) ident(ya)]
+		 ]
+		] 
+		[
+		 match ident(b)
+		 [record literal(point)
+		  [
+		   [literal(x) ident(xb)]
+		   [literal(y) ident(yb)]
+		  ]
+		 ] 
+		 [bind ident(matched) true]
+		 [bind ident(matched) false]
+		]
+		[bind ident(matched) false]
+	       ]
+	      ]
+	     ]
+	    ]
+	   ]
+	  ]
+	 ]
+	]
+       ]
+      ]
+     ]
+    ]
+   ]
+  ]
+ ]
+]

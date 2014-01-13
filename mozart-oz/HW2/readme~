@@ -1,0 +1,22 @@
+10314 Jeetesh Mangwani
+10290 Harshit Maheshwari
+10145 Arpit Jain
+
+Questions attempted: all
+
+GIVEN
+Unify.oz
+ProcessRecords.oz
+
+IMPLEMENTED
+SingleAssignmentStore.oz (SAS[Dictionary], AddKeyToSAS, BindValuesToKeyInSAS, BindRefToKeyInSAS, RetrieveFromSAS)
+SemanticStack.oz (SemanticStack [Cell], Push, Pop)
+Interpreter.oz (BuildClosure, InterpretNext, Start) [MAIN INTERPRETER]
+Program.oz (Contains a sample program)
+
+To run, open oz in emacs environment, feed Interpreter.oz
+
+Output: a sequence of execution states each of them of the form 
+<Top of Semantic Stack> <SAS>
+
+

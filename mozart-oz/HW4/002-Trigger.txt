@@ -1,0 +1,17 @@
+Triggers may get stuck on triggerless unbound variables. If the triggerless unbound variable is destined to be bound by a trigger later, then the execution suspends indefinitely in a system where triggers are activated sequentially
+e.g.
+
+
+------------------------------
+local
+	Z % 01 the triggerless unbound variable
+	{ByNeed fun {$ X} X=1 X+Z end A} % 02 the trigger which suspends on unbound Z
+	{ByNeed fun {$ Y} Z=1 Y=2 end B} % 03 the trigger which binds Z
+in
+	{Browse A+B} % 04 activates triggers for A and B
+end
+-------------------------------
+
+If triggers were activated sequentially, control will block on line 02 due to the unbound Z
+
+If triggers were activated concurrently, control will resume from line 02 once Z is bound by a concurrent thread executing the trigger installed by line 03
